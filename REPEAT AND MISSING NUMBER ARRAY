@@ -1,0 +1,32 @@
+/*You are given a read only array of n integers from 1 to n.
+
+Each integer appears exactly once except A which appears twice and B which is missing.
+
+Return A and B.
+
+Note: Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+Note that in your output A should precede B.
+
+Example:
+
+Input:[3 1 2 5 3] 
+
+Output:[3, 4] 
+
+A = 3, B = 4
+*/
+
+class Solution:
+    # @param A : tuple of integers
+    # @return a list of integers
+    def repeatedNumber(self, A):
+        l=len(A)
+        sum1=(l*(l+1))//2
+        s=set(A)
+        st=sum(s)
+        r1=sum1-st
+        r2=(sum(A)+r1)-sum1
+        
+       
+        return r2,r1
